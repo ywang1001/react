@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Radio from './components/Radio';
-import Table from './components/Table';
+//import Radio from './components/Radio';
+//import Table from './components/Table';
 
 class App extends Component {
   constructor() {
@@ -17,11 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className='container-fluid'>
-        <center>
-          <h1>Birthday Records</h1>
-        </center>
-        <Radio />
-        <Table />
+         hi
       </div>
 );
 
