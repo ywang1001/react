@@ -18,7 +18,7 @@ class Country extends Component {
         e.preventDefault();
         this.setState({
             ...this.state,
-            countrys: [...this.state.countrys, this.state.country]
+            countrys: [...new Set([...this.state.countrys, this.state.country])]
         }, () => {
             this.setState({country: ""})
         })
@@ -26,6 +26,10 @@ class Country extends Component {
 
     handleSelect = (e) => {
         this.setState({selectcountry: e.target.value});
+    }
+
+    handleBack = (e) => {
+        this.props.history.push('/')
     }
 
     render(){
@@ -57,6 +61,24 @@ class Country extends Component {
                          }
                       </select>
                 </div>
+                <nav className = 'navbar navbar-default' role = 'navigation'>
+                    <div className = 'container-fluid'>
+                         <div className = 'navbar-header'>
+                            <a className = 'navbar-brand'>cnt</a>
+                         </div>
+                         <div className = 'nav navbar-nav'>
+                               <div className = 'dropdown'>
+                                   <button className = 'btn btn-secondary dropdown-toggle' type='button' id = 'dropdownMenuButton' data-toggle = 'dropdown' aria-haspopup='true' aria-expanded = 'false'>cit</button>
+                                   <div className = 'dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                                       <a>zhw</a>
+                                       <a>hjy</a>
+                                       <a>kxl</a>
+                                   </div>
+                               </div>
+                         </div>
+                    </div>
+                </nav>
+                <button onClick = {this.handleBack}>Home</button>
             </div>
         )
     }

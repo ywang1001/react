@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class HomePage extends Component {
    constructor(props) {
        super(props);
@@ -24,14 +25,14 @@ class HomePage extends Component {
        return(
            <div>
                <h1>Home</h1>
-
+              
                <div>
                    Github:
                    <button className = 'btn btn-danger' onClick = {this.handleGit}>git</button>
                    Social Self Service:
                    <button className = 'btn btn-danger' onClick = {this.handleSSS}>social self service</button>
-                   Country
-                   <button className = 'btn btn-danger' onClick = {this.handleCCC}>country</button>
+                   Lover
+                   <button className = 'btn btn-danger' onClick = {this.handleCCC}>Lover</button>
                </div>
            </div>
        )
