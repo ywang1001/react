@@ -16,6 +16,7 @@ class User extends Component {
 
     render(){
         const {user, index, history} = this.props;
+        //console.log('user is, ', user);
         return(
            
                 <tr scope = "row" key = {index}>

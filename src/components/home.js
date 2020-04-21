@@ -12,6 +12,14 @@ class HomePage extends Component {
        this.props.history.push('/github');
    }
 
+   handleSSS = (e) => {
+       this.props.history.push('/SocialSelfService')
+   }
+
+   handleCCC = () => {
+      this.props.history.push('/country');
+   }
+
    render(){
        return(
            <div>
@@ -20,6 +28,10 @@ class HomePage extends Component {
                <div>
                    Github:
                    <button className = 'btn btn-danger' onClick = {this.handleGit}>git</button>
+                   Social Self Service:
+                   <button className = 'btn btn-danger' onClick = {this.handleSSS}>social self service</button>
+                   Country
+                   <button className = 'btn btn-danger' onClick = {this.handleCCC}>country</button>
                </div>
            </div>
        )

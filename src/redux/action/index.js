@@ -49,3 +49,21 @@ export const getUser = function getUser(login) {
         )
     }
 }
+
+function getEmailSuccess(data) {
+    return {
+        type: types.GET_EMAIL_SUCCESS,
+        data
+    }
+}
+
+export const getEmail = function getEmail(){
+    return (dispatch) => {
+        dispatch(setLoad());
+        axios.get('http://api.haochuan.io/emails').then(
+            res => dispatch(getEmailSuccess(res.data))
+        ).catch(
+             error => setError(error)
+        )
+    }
+}
