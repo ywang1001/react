@@ -25,6 +25,10 @@ class HomePage extends Component {
        this.props.history.push('/oa');
    }
 
+   handleCheck = () => {
+       this.props.history.push('/checkbox');
+   }
+
    render(){
        return(
            <div>
@@ -37,7 +41,8 @@ class HomePage extends Component {
                    <button className = 'btn btn-danger' onClick = {this.handleSSS}>social self service</button>
                    Lover
                    <button className = 'btn btn-danger' onClick = {this.handleCCC}>Lover</button>
-                  
+                   CheckBox
+                   <button className = 'btn btn-primary' onClick = {this.handleCheck}>Checkbox</button>
                </div>
            </div>
        )

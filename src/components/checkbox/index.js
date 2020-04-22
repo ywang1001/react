@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class CheckBox extends Component {
     constructor(props) {
@@ -11,37 +12,56 @@ class CheckBox extends Component {
 
     handleChange = (e) => {
         let {number, arr} = this.state;
-        if(!arr.has(e.target.value)) {
+        console.log(e.target.value);
+        if(!arr.includes(e.target.value)) {
             this.setState({
                 ...this.state,
                 number: this.state.number + 1,
                 arr: [...arr, e.target.value]
             });
         }else {
+            let newArr = arr.filter(ele => ele !== e.target.value)
             this.setState({
                ...this.state,
                number: this.state.number - 1,
-               arr: arr.filter((ele) => {
-                   ele !== e.target.value
-               })
+               arr: newArr
             })
         }
+    }
+
+    handleHome = () => {
+        this.props.history.push('/');
     }
 
     render(){
         return(
             <div>
+                Hello
                 <div className = 'container'>
                     <div>{this.state.number}</div>
                     <div className = 'check'>
-                        <input type = 'checkbox' onChange = {this.handleChange} value = '1'>Class1</input>
-                        <input type = 'checkbox' onChange = {this.handleChange} value = '2'>Class2</input>
-                        <input type = 'checkbox' onChange = {this.handleChange} value = '3'>Class3</input>
+                        <input type = 'checkbox' onChange = {this.handleChange} value = '1'/>Class1
+                        <input type = 'checkbox' onChange = {this.handleChange} value = '2'/>Class2
+                        <input type = 'checkbox' onChange = {this.handleChange} value = '3'/>Class3
                     </div>
                 </div>
+
+                <button className = 'btn btn-primary' onClick = {this.handleHome}>Home</button>
             </div>
         )
     }
 }
 
-export default CheckBox;
+const mapStateToProps = state =>  {
+    return{
+       list: state.list
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckBox);

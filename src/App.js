@@ -19,6 +19,7 @@ class App extends Component {
                       <Route exact component = {Detail} path = '/github/detail'/>
                       <Route exact component = {UserList} path = '/SocialSelfService'/>
                       <Route exact component = {Country} path = '/country'/>
+                      <Route exact component = {CheckBox} path = '/checkbox'/>
                       
                   </Switch>
                 </BrowserRouter>
