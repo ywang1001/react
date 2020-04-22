@@ -5,6 +5,7 @@ import HomePage from './components/home';
 import Detail from './components/detail';
 import UserList from './components/users';
 import Country from './components/countries';
+import CheckBox from './components/checkbox'
 
 class App extends Component {
     render(){
@@ -18,6 +19,7 @@ class App extends Component {
                       <Route exact component = {Detail} path = '/github/detail'/>
                       <Route exact component = {UserList} path = '/SocialSelfService'/>
                       <Route exact component = {Country} path = '/country'/>
+                      
                   </Switch>
                 </BrowserRouter>
             </div>

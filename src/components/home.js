@@ -21,6 +21,10 @@ class HomePage extends Component {
       this.props.history.push('/country');
    }
 
+   handleOA = () => {
+       this.props.history.push('/oa');
+   }
+
    render(){
        return(
            <div>
@@ -33,6 +37,7 @@ class HomePage extends Component {
                    <button className = 'btn btn-danger' onClick = {this.handleSSS}>social self service</button>
                    Lover
                    <button className = 'btn btn-danger' onClick = {this.handleCCC}>Lover</button>
+                  
                </div>
            </div>
        )
