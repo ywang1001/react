@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Timer from './timer/index';
+import Counter from './counter/index';
 
 
 class HomePage extends Component {
@@ -29,6 +31,10 @@ class HomePage extends Component {
        this.props.history.push('/checkbox');
    }
 
+   handleArmy = () => {
+       this.props.history.push('/army');
+   }
+
    render(){
        return(
            <div>
@@ -43,6 +49,16 @@ class HomePage extends Component {
                    <button className = 'btn btn-danger' onClick = {this.handleCCC}>Lover</button>
                    CheckBox
                    <button className = 'btn btn-primary' onClick = {this.handleCheck}>Checkbox</button>
+                   ArmyList
+                   <button className = 'btn btn-primary' onClick = {this.handleArmy}>Army</button>
+               </div>
+
+               <div>
+                   <Timer/>
+               </div>
+
+               <div>
+                   <Counter/>
                </div>
            </div>
        )

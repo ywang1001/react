@@ -67,3 +67,47 @@ export const getEmail = function getEmail(){
         )
     }
 }
+
+function getCurrentPageSuccess(data){
+   return{
+       type: types.GET_CURRENTPAGE_SUCCESS,
+       data
+   }
+}
+
+export const getCurrentPage = function getgetCurrentPage(){
+    return (dispatch) => {
+        dispatch(setLoad());
+        axios.get('http://localhost:4000/api/users/list').then(
+            res => dispatch(getCurrentPageSuccess(res.data))
+        ).catch(
+            error => dispatch(setError(error))
+        )
+    }
+}
+
+function Add(){
+    return{
+        type: types.ADD_SUCCESS
+    }
+}
+
+export const AddNumber = function AddNumber(){
+    return (dispatch) => {
+        //dispatch(setLoad());
+        dispatch(Add());
+    }
+}
+
+function Sub(){
+    return{
+        type: types.SUB_SUCCESS
+    }
+}
+
+export const SubNumber = function SubNumber(){
+    return (dispatch) => {
+        //dispatch(setLoad());
+        dispatch(Sub());
+    }
+}
